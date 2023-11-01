@@ -97,3 +97,14 @@ def index(request):
 ```
 
 - 하나의 게시물 출력
+```
+def detail(request, id):
+    post = Post.objects.get(id=id)
+
+    context = {
+        'post': post,
+    }
+
+    return render(request, 'detail.html', context)
+```
+
